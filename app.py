@@ -16,10 +16,10 @@ def index():
     if request.method == 'POST':
         items = request.form.getlist('items')
         n = int(request.form.get('n', 1))
-        if isinstance(n, int): 
+        if isinstance(n, int) and n <= 100000: 
           n = int(request.form.get('n', 1))
         else:
-          message = "뽑기 횟수란에는 숫자만 입력 가능합니다."
+          message = "뽑기 횟수란에는 100000 이하의 자연수만 입력 가능합니다."
           return jsonify(message), 400
           
         result = choice_lunch_menu(*items, n=n)
