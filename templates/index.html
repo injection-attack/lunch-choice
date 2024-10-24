@@ -16,9 +16,13 @@
     <div id="inputContainer">
       <input class="list" type="text" name="items" required>
     </div>
-
-    <button type="button" id="addInput">메뉴 추가</button>
-    <button type="button" id="removeInput">메뉴 제거</button>
+    <div class="button-group">
+      <button type="button" id="addInput">메뉴 추가</button>
+      <button type="button" id="removeInput">메뉴 제거</button>
+    </div>
+    
+    <span class="random-choice">나약하게 결정을 컴퓨터에게 맡기기</span>
+    
 
     <p>뽑기 횟수</p>
     <span> 1-100000 사이의 자연수를 입력해주세요.<br>(ex: 12.5와 같은 소수는 불가능) </span>
@@ -34,11 +38,10 @@
       <p>메뉴를 선택하고 있습니다...</p>
     </div>
   
-    <!-- <img src="{{ url_for('static', filename='images/loading.gif') }}" alt="로딩 중..."> -->
     <div id="resultContent"></div>
   </div>
 
-
+  <script src="{{ url_for('static', filename='js/randomchoice.js') }}"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const form = document.getElementById('menuForm');
@@ -119,9 +122,8 @@
       });
     });
 
-  </script>
 
- 
+  </script>
 
 </body>
 </html>
